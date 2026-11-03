@@ -45,12 +45,13 @@ export const IMAGES = {
   cityEvening: '/images/city-dusk.jpg', // skyline at blue hour
 
   // Fleet
-  executiveSedan: '/images/executive-sedan.jpg', // black Audi executive sedan
+  executiveSedan: '/images/executive-sedan.jpg', // black Porsche Panamera sedan
   luxurySUV: '/images/luxury-suv.jpg', // black Range Rover
   stretchLimo: '/images/rolls-royce.jpg', // Rolls-Royce for limo / celebration
-  executiveSprinter: '/images/motor-coach.jpg', // premium group coach
-  shuttleBus: '/images/motor-coach.jpg',
-  motorCoach: '/images/motor-coach.jpg',
+  executiveSprinter: '/images/shuttle.jpg', // minibus / executive van
+  shuttleBus: '/images/shuttle.jpg', // shuttle minibus, group boarding
+  motorCoach: '/images/motor-coach.jpg', // 55-seat touring coach
+  gClass: '/images/g-class.jpg', // black Mercedes G-Class, city arrival
 
   // Airports
   airportWindow: '/images/airport-wing.jpg', // wing above the clouds at sunset
@@ -58,7 +59,7 @@ export const IMAGES = {
   airportRunway: '/images/airport-wing.jpg',
 
   // Occasions
-  corporateArrival: '/images/black-car.jpg', // black Mercedes-AMG arrival
+  corporateArrival: '/images/g-class.jpg', // black Mercedes G-Class city arrival
   weddingArrival: '/images/rolls-royce.jpg', // white Rolls-Royce
   eventVenue: '/images/wedding.jpg', // event table setting
   roadshow: '/images/executive-sedan.jpg',

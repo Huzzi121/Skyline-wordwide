@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SiteFooter, SiteHeader } from '@/components/detail-page'
+import { Reveal, Stagger, StaggerItem, WordReveal } from '@/components/motion'
 import { BUSINESS } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -65,28 +66,30 @@ export default function PrivacyPage() {
               <span aria-current="page">Privacy</span>
             </span>
           </nav>
-          <p className="eyebrow light">Legal</p>
+          <Reveal delay={0.05}><p className="eyebrow light">Legal</p></Reveal>
           <h1 className="legal-title">
-            Privacy <em>policy.</em>
+            <WordReveal text="Privacy" delay={0.12} /> <WordReveal text="policy." italic delay={0.3} />
           </h1>
-          <p className="legal-lead">
-            {BUSINESS.name} has served the capital region since {BUSINESS.since}. This summary
-            explains what we collect when you book chauffeured travel, how we use it and the choices
-            you have. Last updated November 2026.
-          </p>
+          <Reveal delay={0.4}>
+            <p className="legal-lead">
+              {BUSINESS.name} has served the capital region since {BUSINESS.since}. This summary
+              explains what we collect when you book chauffeured travel, how we use it and the
+              choices you have. Last updated November 2026.
+            </p>
+          </Reveal>
         </section>
         <section className="legal-page section-pad">
-          <div className="legal-body">
+          <Stagger className="legal-body" gap={0.07}>
             {sections.map((s) => (
-              <section className="legal-section" key={s.heading}>
+              <StaggerItem className="legal-section" key={s.heading}>
                 <h2>{s.heading}</h2>
                 {s.body.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
-              </section>
+              </StaggerItem>
             ))}
 
-            <section className="legal-section">
+            <StaggerItem className="legal-section">
               <h2>Contact us</h2>
               <p>
                 Questions about this policy or your information? Reach our dispatch team at{' '}
@@ -94,8 +97,8 @@ export default function PrivacyPage() {
                 <a href={BUSINESS.phoneLocalHref}>{BUSINESS.phoneLocal}</a>, by email at{' '}
                 <a href={BUSINESS.emailHref}>{BUSINESS.email}</a>, or by mail at {BUSINESS.address}.
               </p>
-            </section>
-          </div>
+            </StaggerItem>
+          </Stagger>
         </section>
       </main>
       <SiteFooter />

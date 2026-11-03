@@ -2,7 +2,11 @@
 
 import { useState } from 'react'
 import { ArrowUpRight, ChevronRight, Menu, Minus, Phone, Plus, X } from 'lucide-react'
-import { BUSINESS, PRIMARY_NAV, img } from '@/lib/site'
+import { BUSINESS, IMAGES, PRIMARY_NAV, img } from '@/lib/site'
+import { Counter, Reveal, Stagger, StaggerItem, WordReveal, useHeroParallax, useScrolled } from '@/components/motion'
+
+// Neutral-luxury imagery used to give the feature cards a visual surface.
+const CARD_POOL = [IMAGES.cabinInterior, IMAGES.blackCarDetail, IMAGES.executiveSedan, IMAGES.cityEvening, IMAGES.chauffeurOffice, IMAGES.luxurySUV]
 
 export type Feature = { title: string; text: string }
 export type Stat = { label: string; value: string }
@@ -30,9 +34,10 @@ export type DetailPageData = {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const scrolled = useScrolled()
   return (
     <>
-      <header className="site-header inner-header">
+      <header className={`site-header inner-header${scrolled ? ' scrolled' : ''}`}>
         <a className="wordmark" href="/" aria-label={`${BUSINESS.name} home`}>
           <span>SKYLINE</span>
           <small>WORLDWIDE</small>
@@ -178,6 +183,7 @@ function FaqAccordion({ faqs }: { faqs: Faq[] }) {
 }
 
 export function DetailPage({ data }: { data: DetailPageData }) {
+  useHeroParallax()
   const titleLines = data.title.split('\n')
   return (
     <div className="inner-page">
@@ -192,74 +198,87 @@ export function DetailPage({ data }: { data: DetailPageData }) {
           />
           <div className="inner-hero-scrim" />
           <div className="inner-hero-content">
-            <Breadcrumbs items={data.breadcrumbs} />
-            <p className="eyebrow light">{data.eyebrow}</p>
+            <Reveal><Breadcrumbs items={data.breadcrumbs} /></Reveal>
+            <Reveal delay={0.05}><p className="eyebrow light">{data.eyebrow}</p></Reveal>
             <h1>
               {titleLines.map((line, i) => (
                 <span key={line}>
                   {i > 0 && <br />}
-                  {i === titleLines.length - 1 ? <em>{line}</em> : line}
+                  <WordReveal text={line} italic={i === titleLines.length - 1} delay={0.12 + i * 0.18} />
                 </span>
               ))}
             </h1>
-            <p>{data.intro}</p>
+            <Reveal delay={0.35}><p>{data.intro}</p></Reveal>
           </div>
         </section>
 
         {data.stats && data.stats.length > 0 && (
-          <section className="stat-strip">
+          <Stagger className="stat-strip" gap={0.12}>
             {data.stats.map((s) => (
-              <div className="stat" key={s.label}>
-                <strong>{s.value}</strong>
+              <StaggerItem className="stat" key={s.label} y={18}>
+                <strong>
+                  <Counter value={s.value} />
+                </strong>
                 <span>{s.label}</span>
-              </div>
+              </StaggerItem>
             ))}
-          </section>
+          </Stagger>
         )}
 
         <section className="inner-content section-pad">
-          <p className="eyebrow">The Skyline approach</p>
-          <div className="inner-intro">
-            <h2>
-              {data.lead ? (
-                data.lead
-              ) : (
-                <>
-                  Every detail
-                  <br />
-                  <em>has a purpose.</em>
-                </>
-              )}
-            </h2>
-            <a href="/book" className="outline-button">
-              Plan your journey <ArrowUpRight size={16} />
-            </a>
-          </div>
-          <div className="inner-grid">
+          <Reveal>
+            <p className="eyebrow">The Skyline approach</p>
+            <div className="inner-intro">
+              <h2>
+                {data.lead ? (
+                  data.lead
+                ) : (
+                  <>
+                    Every detail
+                    <br />
+                    <em>has a purpose.</em>
+                  </>
+                )}
+              </h2>
+              <a href="/book" className="outline-button">
+                Plan your journey <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </Reveal>
+          <Stagger className="inner-grid" gap={0.09}>
             {data.sections.map((item, index) => (
-              <article className="inner-card" key={item.title}>
-                <span>0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <a href="/book" className="text-link">
-                  Learn more <ArrowUpRight size={15} />
-                </a>
-              </article>
+              <StaggerItem className="inner-card" key={item.title}>
+                <div className="inner-card-media">
+                  <div
+                    style={{ backgroundImage: `url(${img(CARD_POOL[index % CARD_POOL.length], 900)})` }}
+                    role="img"
+                    aria-label={item.title}
+                  />
+                  <span className="inner-card-num">0{index + 1}</span>
+                </div>
+                <div className="inner-card-body">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <a href="/book" className="text-link">
+                    Learn more <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </section>
 
         {data.gallery && data.gallery.length > 0 && (
           <section className="gallery-section section-pad dark-section">
-            <div className="section-heading">
+            <Reveal className="section-heading">
               <div>
                 <p className="eyebrow light">A closer look</p>
                 <h2>
                   Presentation, <em>in detail.</em>
                 </h2>
               </div>
-            </div>
-            <div className="gallery-grid">
+            </Reveal>
+            <Reveal className="gallery-grid" delay={0.1}>
               {data.gallery.map((g) => (
                 <div
                   className="gallery-item"
@@ -269,58 +288,64 @@ export function DetailPage({ data }: { data: DetailPageData }) {
                   aria-label={g.alt}
                 />
               ))}
-            </div>
+            </Reveal>
           </section>
         )}
 
         {data.faqs && data.faqs.length > 0 && (
           <section className="faq-section section-pad">
-            <div className="faq-head">
+            <Reveal className="faq-head">
               <p className="eyebrow">Good to know</p>
               <h2>
                 Questions,
                 <br />
                 <em>answered.</em>
               </h2>
-            </div>
-            <FaqAccordion faqs={data.faqs} />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <FaqAccordion faqs={data.faqs} />
+            </Reveal>
           </section>
         )}
 
         {data.related && data.related.length > 0 && (
           <section className="related-section section-pad">
-            <p className="eyebrow">Continue exploring</p>
-            <div className="related-grid">
-              {data.related.map((r) => (
-                <a className="related-card" href={r.href} key={r.href}>
-                  {r.eyebrow && <p className="eyebrow">{r.eyebrow}</p>}
-                  <span>{r.label}</span>
-                  <ArrowUpRight size={18} />
-                </a>
-              ))}
-            </div>
+            <Reveal>
+              <p className="eyebrow">Continue exploring</p>
+              <div className="related-grid">
+                {data.related.map((r) => (
+                  <a className="related-card" href={r.href} key={r.href}>
+                    {r.eyebrow && <p className="eyebrow">{r.eyebrow}</p>}
+                    <span>{r.label}</span>
+                    <ArrowUpRight size={18} />
+                  </a>
+                ))}
+              </div>
+            </Reveal>
           </section>
         )}
 
         <section className="inner-cta section-pad">
-          <p className="eyebrow light">Available around the clock</p>
-          <h2>
-            {(data.ctaTitle ?? 'Make the next move\nthe easy one.').split('\n').map((line, i) => (
-              <span key={line}>
-                {i > 0 && <br />}
-                {i === 1 ? <em>{line}</em> : line}
-              </span>
-            ))}
-          </h2>
-          {data.ctaText && <p className="cta-text">{data.ctaText}</p>}
-          <div className="closing-actions">
-            <a className="nav-button" href="/book">
-              Request a reservation <ArrowUpRight size={16} />
-            </a>
-            <a className="outline-button" href={BUSINESS.phonePrimaryHref}>
-              Call {BUSINESS.phonePrimary}
-            </a>
-          </div>
+          <Reveal>
+            <p className="eyebrow light">Available around the clock</p>
+            <h2>
+              {(data.ctaTitle ?? 'Make the next move\nthe easy one.').split('\n').map((line, i) => (
+                <span key={line}>
+                  {i > 0 && <br />}
+                  {i === 1 ? <em>{line}</em> : line}
+                </span>
+              ))}
+            </h2>
+            {data.ctaText && <p className="cta-text">{data.ctaText}</p>}
+            <div className="closing-actions">
+              <a className="nav-button" href="/book">
+                Request a reservation <ArrowUpRight size={16} />
+              </a>
+              <a className="outline-button" href={BUSINESS.phonePrimaryHref}>
+                Call {BUSINESS.phonePrimary}
+              </a>
+            </div>
+          </Reveal>
         </section>
       </main>
       <SiteFooter />
