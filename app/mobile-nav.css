@@ -1,0 +1,8 @@
+@media (max-width: 900px) {
+  .site-header .desktop-nav,
+  .site-header .phone-link,
+  .site-header .nav-button { display: none; }
+  .site-header .menu-button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.32); color: white; font-size: 22px; }
+  .mobile-menu { display: flex; position: fixed; z-index: 20; top: 91px; left: 0; right: 0; padding: 26px 7vw 32px; flex-direction: column; gap: 20px; background: rgba(11,12,14,.97); border-bottom: 1px solid var(--brass); }
+  .mobile-menu a { color: white; text-transform: uppercase; letter-spacing: .18em; font-size: 11px; }
+}
