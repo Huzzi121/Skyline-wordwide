@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { ArrowUpRight, ChevronRight, Menu, Minus, Phone, Plus, X } from 'lucide-react'
 import { BUSINESS, IMAGES, PRIMARY_NAV, img } from '@/lib/site'
-import { Counter, Reveal, Stagger, StaggerItem, WordReveal, useHeroParallax, useScrolled } from '@/components/motion'
+import { Counter, Reveal, Stagger, StaggerItem, WordReveal, useHeroParallax, useNavbarTheme, useScrolled } from '@/components/motion'
 
 // Neutral-luxury imagery used to give the feature cards a visual surface.
 const CARD_POOL = [IMAGES.cabinInterior, IMAGES.blackCarDetail, IMAGES.executiveSedan, IMAGES.cityEvening, IMAGES.chauffeurOffice, IMAGES.luxurySUV]
@@ -34,10 +34,10 @@ export type DetailPageData = {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const scrolled = useScrolled()
+  const { theme, scrolled } = useNavbarTheme()
   return (
     <>
-      <header className={`site-header inner-header${scrolled ? ' scrolled' : ''}`}>
+      <header className={`site-header nav-theme-${theme}${scrolled ? ' scrolled' : ''}`}>
         <a className="wordmark" href="/" aria-label={`${BUSINESS.name} home`}>
           <span>SKYLINE</span>
           <small>WORLDWIDE</small>
@@ -50,7 +50,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <a className="phone-link" href={BUSINESS.phonePrimaryHref}>
+          <a className="phone-link" href={BUSINESS.phonePrimaryHref} aria-label={`Call ${BUSINESS.phonePrimary}`}>
             <Phone size={14} /> {BUSINESS.phonePrimary}
           </a>
           <a className="nav-button" href="/book">
@@ -67,7 +67,7 @@ export function SiteHeader() {
         </div>
       </header>
       {open && (
-        <nav className="mobile-menu inner-mobile-menu" aria-label="Mobile navigation">
+        <nav className={`mobile-menu nav-theme-${theme}`} aria-label="Mobile navigation">
           {PRIMARY_NAV.map((item) => (
             <a href={item.href} key={item.href} onClick={() => setOpen(false)}>
               {item.label}
@@ -189,7 +189,7 @@ export function DetailPage({ data }: { data: DetailPageData }) {
     <div className="inner-page">
       <SiteHeader />
       <main>
-        <section className="inner-hero">
+        <section className={`inner-hero${data.stats && data.stats.length > 0 ? ' has-stats' : ''}`}>
           <div
             className="inner-hero-image"
             style={{ backgroundImage: `url(${img(data.heroImage, 2200)})` }}
@@ -210,36 +210,36 @@ export function DetailPage({ data }: { data: DetailPageData }) {
             </h1>
             <Reveal delay={0.35}><p>{data.intro}</p></Reveal>
           </div>
-        </section>
 
-        {data.stats && data.stats.length > 0 && (
-          <Stagger className="stat-strip" gap={0.12}>
-            {data.stats.map((s) => (
-              <StaggerItem className="stat" key={s.label} y={18}>
-                <strong>
-                  <Counter value={s.value} />
-                </strong>
-                <span>{s.label}</span>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        )}
+          {data.stats && data.stats.length > 0 && (
+            <div className="inner-hero-stats-bar" aria-label="Key highlights">
+              {data.stats.map((s) => (
+                <div className="inner-hero-stat-item" key={s.label}>
+                  <strong className="inner-hero-stat-value">
+                    <Counter value={s.value} />
+                  </strong>
+                  <span className="inner-hero-stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
 
         <section className="inner-content section-pad">
           <Reveal>
             <p className="eyebrow">The Skyline approach</p>
             <div className="inner-intro">
-              <h2>
-                {data.lead ? (
-                  data.lead
-                ) : (
-                  <>
-                    Every detail
-                    <br />
-                    <em>has a purpose.</em>
-                  </>
-                )}
-              </h2>
+              {data.lead ? (
+                <div className="inner-intro-lead-wrapper">
+                  <h2 className="inner-intro-lead">{data.lead}</h2>
+                </div>
+              ) : (
+                <h2>
+                  Every detail
+                  <br />
+                  <em>has a purpose.</em>
+                </h2>
+              )}
               <a href="/book" className="outline-button">
                 Plan your journey <ArrowUpRight size={16} />
               </a>

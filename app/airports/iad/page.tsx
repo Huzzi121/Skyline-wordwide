@@ -3,101 +3,103 @@ import { DetailPage, type DetailPageData } from '@/components/detail-page'
 import { BUSINESS, IMAGES, img } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Dulles International (IAD) Car Service & Chauffeur | Skyline Worldwide',
+  title: 'IAD Airport Black Car Transfer Service — Washington Dulles | Skyline Worldwide',
   description:
-    'Chauffeur service for Washington Dulles International (IAD). Meet-and-greet in arrivals, 24/7 flight tracking and all-inclusive rates to Tysons, Reston, McLean and DC.',
+    'Top-tier IAD Airport Black Car Transfer Service to and from Washington Dulles International Airport (IAD). Professional chauffeurs, real-time flight tracking, and luxury sedans, SUVs, and Sprinters.',
   alternates: { canonical: '/airports/iad' },
   openGraph: {
-    title: 'Dulles International (IAD) Car Service & Chauffeur | Skyline Worldwide',
+    title: 'IAD Airport Black Car Transfer Service | Skyline Worldwide',
     description:
-      'Meet-and-greet chauffeur service at Washington Dulles (IAD) with 24/7 flight tracking and all-inclusive rates to Tysons, Reston, McLean and DC.',
+      'Premier IAD Airport Black Car Transfer Service serving Northern Virginia, Washington DC, and Maryland with 24/7 flight tracking and executive fleet.',
     images: [{ url: img(IMAGES.airportTerminal, 1200) }],
   },
 }
 
 const data: DetailPageData = {
-  eyebrow: 'Washington Dulles · IAD',
-  title: 'The gateway\nfor the corridor.',
+  eyebrow: 'Airport Transfer Service · IAD',
+  title: 'IAD Airport Black Car\nTransfer Service.',
   intro:
-    'Dulles is the region’s long-haul and international hub, and its scale rewards a chauffeur who knows it — one tracking your flight, waiting at the right door and ready the moment you reach arrivals.',
-  heroImage: 'airportTerminal',
+    'Skyline Worldwide provides top-tier IAD Airport Black Car Transfer Service to and from Washington Dulles International Airport (IAD), ensuring a seamless and comfortable travel experience for individuals and groups of any size.',
+  heroImage: IMAGES.airportTerminal,
   breadcrumbs: [
     { label: 'Home', href: '/' },
     { label: 'Airports', href: '/airports' },
     { label: 'Washington Dulles · IAD' },
   ],
   stats: [
-    { value: '≈ 26 mi', label: 'to downtown DC' },
-    { value: '≈ 45 min', label: 'typical drive time' },
-    { value: '24/7', label: 'flight tracking & dispatch' },
-    { value: 'Since 2000', label: 'chauffeuring the capital' },
+    { value: 'IAD', label: 'International Airport' },
+    { value: '24/7', label: 'Real-Time Flight Tracking' },
+    { value: 'Main & FBO', label: 'Commercial & Private Aprons' },
+    { value: '100%', label: 'All-Inclusive Fixed Rates' },
   ],
+  lead:
+    'Dulles is the primary international and transcontinental gateway for the Washington capital region. From commercial concourses to private FBOs, we ensure seamless movement between IAD, Northern Virginia, DC, and Maryland.',
   sections: [
     {
-      title: 'Where we meet you',
-      text: 'Your chauffeur waits inside the main terminal at baggage claim with a name board. Dulles routes most arrivals through the central terminal, so you are met in one place rather than sent chasing a distant concourse.',
+      title: 'IAD Airport Black Car Transfer Service',
+      text:
+        'Skyline Worldwide provides top-tier IAD Airport Black Car Transfer Service to and from Washington Dulles International Airport (IAD), ensuring a seamless and comfortable travel experience for individuals and groups of any size. Whether you require executive transportation for corporate travel or a reliable IAD Airport Black Car Transfer Service for personal use, our professional chauffeurs prioritize punctuality, safety, and exceptional service. From the moment you land to your final destination, we guarantee a stress-free journey. Our diverse fleet is equipped to handle all airport transportation needs, featuring late-model luxury sedans, executive SUVs, corporate Sprinter vans, mini buses, shuttle buses, and full-size charter coaches. Whether you\'re traveling solo, with colleagues, or with a large group, we have the perfect vehicle to match your requirements. Every ride is designed for comfort, sophistication, and efficiency, ensuring you arrive at your destination in style.',
     },
     {
-      title: 'International arrivals',
-      text: 'Long-haul passengers clear customs and immigration before reaching the greeting area, and we plan for it. We watch the inbound flight and allow for the extra time, so the chauffeur is present whenever you finally emerge.',
+      title: 'Black Car Transfer Service IAD Airport',
+      text:
+        'Skyline Worldwide offers competitive pricing and great discounts on all IAD airport chauffeured transportation services. We track flights in real time, providing flexibility in case of delays or early arrivals. Our team is committed to delivering a smooth and worry-free experience, so you can relax knowing that your transportation is in expert hands. With customizable scheduling and premium service, we cater to all your IAD Airport Black Car Transfer Service needs.',
     },
     {
-      title: 'Live flight monitoring',
-      text: 'Every IAD transfer is tracked by flight number around the clock. Overnight landings, schedule slips and early touchdowns are all handled by dispatch so the car is staged for your real arrival time.',
+      title: 'IAD Airport Chauffeured Transportation',
+      text:
+        'With experienced, professional chauffeurs, 24/7 customer support, and real-time dispatch, Skyline Worldwide sets the standard for luxury airport transportation. Whether you need a private IAD Airport Black Car Transfer Service, corporate shuttle, or group transportation, our team is ready to assist. Contact us today for more information, current rates, and exclusive promotions on IAD airport black car services.',
     },
     {
-      title: 'Meet-and-greet in arrivals',
-      text: 'A professional chauffeur greets you by name inside the terminal, confirms your party and escorts you out — the hallmark of Skyline service since 2000, whether you land at 2 pm or 2 am.',
+      title: 'Main Terminal & Baggage Level Meet',
+      text:
+        'For domestic and international arrivals at Dulles Main Terminal, your suited chauffeur greets you inside baggage claim with an executive digital nameboard, handles your luggage, and escorts you directly to your waiting vehicle in the reserved chauffeur lane.',
     },
     {
-      title: 'Luggage handled',
-      text: 'Expect help from carousel to curb. Your chauffeur manages the bags and loads the vehicle; for the heavier hauls common on international itineraries we match you to a sedan, SUV or Sprinter at booking.',
+      title: 'Signature Flight Support & Jet Aviation FBOs',
+      text:
+        'Flying via private jet or corporate charter into IAD? Skyline Worldwide provides direct tarmac-side escort and executive terminal greeting at Signature Flight Support (East & West) and Jet Aviation FBOs, timed to your tail number.',
     },
     {
-      title: 'Who it serves',
-      text: 'IAD anchors the Dulles corridor — Tysons, Reston, Herndon and McLean — and connects cleanly to Washington and Maryland. Rates are quoted all-inclusive for a single rider or a full group.',
+      title: 'Direct Toll Road Transit to DC & Northern Virginia',
+      text:
+        'Our chauffeurs utilize the dedicated Dulles Access Corridor and express lanes to bypass local Virginia traffic, delivering quiet, uninterrupted transit directly to Tysons, Reston, Arlington, Bethesda, and downtown DC.',
     },
   ],
   gallery: [
-    { src: 'airportTerminal', alt: 'The main terminal concourse at Washington Dulles' },
-    { src: 'airportRunway', alt: 'Aircraft on the runway at Dulles International' },
-    { src: 'blackCarDetail', alt: 'Detail of a black executive vehicle staged for pickup' },
+    { src: IMAGES.airportTerminal, alt: 'Washington Dulles Main Terminal architectural view' },
+    { src: '/pics/cadilac%20escalade.jpeg', alt: 'Cadillac Escalade ESV staged for IAD pickup' },
+    { src: '/pics/mercedes%20s580.jpeg', alt: 'Mercedes-Benz S580 Executive Sedan' },
+    { src: IMAGES.airportWindow, alt: 'Aircraft arrival at sunset' },
   ],
   faqs: [
     {
-      q: 'Where exactly will my chauffeur meet me?',
-      a: 'Inside the main terminal at baggage claim, holding a name board. Prefer a curbside pickup at the arrivals roadway? Note it at booking and we coordinate by text.',
+      q: 'Where do I meet my chauffeur at Dulles (IAD)?',
+      a: 'We offer inside meet-and-greet at the baggage-claim level corresponding to your airline, holding a personalized greeting sign. If you prefer curbside pickup, your chauffeur stages in the cellphone holding area and pulls directly to the outer arrivals curb when you text upon luggage retrieval.',
     },
     {
-      q: 'What happens if my flight is delayed or early?',
-      a: 'We track your flight live by number, so dispatch moves the pickup to the actual landing time at no extra charge. Long-haul delays are routine for us; your chauffeur waits.',
+      q: 'How do you handle international arrivals with customs and immigration at IAD?',
+      a: 'International flights at Dulles frequently experience variable customs lines. Skyline Worldwide tracks your flight touchdown and provides a complimentary 60-minute domestic / 90-minute international wait window to ensure you never feel rushed.',
     },
     {
-      q: 'Do you allow extra time for international arrivals?',
-      a: 'Yes. For flights clearing customs and immigration we build in the additional processing time and meet you at the international arrivals exit once you are through.',
+      q: 'Do you provide car service to private FBO terminals at Dulles?',
+      a: 'Yes. We service both Signature Flight Support and Jet Aviation FBOs at IAD. We coordinate directly with ground line service for plane-side or lounge pickups.',
     },
     {
-      q: 'How far in advance should I book?',
-      a: 'A few hours’ notice lets us confirm the right vehicle and chauffeur, but our 24/7 dispatch accommodates same-day and last-minute Dulles requests whenever possible.',
-    },
-    {
-      q: 'Do you track flights automatically?',
-      a: 'Yes — every IAD transfer is monitored around the clock by flight number, so gate changes and schedule shifts never leave you stranded.',
-    },
-    {
-      q: 'Are parking and tolls included in the price?',
-      a: 'Yes. Quotes are all-inclusive — Dulles access fees, Greenway and toll-road charges, meet-and-greet and wait time are built into the rate with nothing added later.',
+      q: 'How long is the drive from IAD to downtown Washington DC?',
+      a: 'Via the dedicated Dulles Access Road and I-66, the drive is approximately 26 miles, typically taking 35 to 50 minutes depending on the time of day.',
     },
   ],
   related: [
-    { label: 'Reagan National · DCA', href: '/airports/dca', eyebrow: 'Another airport' },
-    { label: 'Baltimore · BWI', href: '/airports/bwi', eyebrow: 'Another airport' },
-    { label: 'Airport transfer service', href: '/services/airport-transfers', eyebrow: 'Service' },
+    { label: 'Reagan National · DCA', href: '/airports/dca', eyebrow: 'Regional Hub' },
+    { label: 'Baltimore/Washington · BWI', href: '/airports/bwi', eyebrow: 'Regional Hub' },
+    { label: 'Richmond International · RIC', href: '/airports/ric', eyebrow: 'Virginia Gateway' },
+    { label: 'All 6 Airport Hubs', href: '/airports', eyebrow: 'Directory' },
   ],
-  ctaTitle: 'Clear the gate to\na waiting chauffeur.',
-  ctaText: `Reserve a Dulles chauffeur online or call ${BUSINESS.phonePrimary} — our dispatch runs 24/7.`,
+  ctaTitle: 'Your IAD chauffeur is\nmonitoring your touchdown.',
+  ctaText: `Book your IAD black car transfer online or call our 24/7 dispatch desk at ${BUSINESS.phonePrimary} for immediate reservation confirmation.`,
 }
 
-export default function Page() {
+export default function IADPage() {
   return <DetailPage data={data} />
 }

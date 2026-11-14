@@ -98,6 +98,11 @@ const pageData: Record<string, PageData> = {
       { title: 'Corporate accounts', text: 'For recurring travel, roadshows and team movement, ask about a private transportation desk.', href: '/corporate/accounts', image: IMAGES.chauffeurOffice },
       { title: 'Client login', text: 'Existing clients can access their account, traveler profiles and billing portal.', href: '/client-login', image: IMAGES.clientWorkspace },
     ],
+    related: [
+      { eyebrow: 'Service', label: 'Corporate travel desk', href: '/corporate' },
+      { eyebrow: 'Airports', label: 'Airport meet & greet', href: '/airports/airport-meet-and-greet' },
+      { eyebrow: 'Fleet', label: 'Explore the full fleet', href: '/fleet' },
+    ],
   },
   about: {
     eyebrow: 'About Skyline',
@@ -109,6 +114,11 @@ const pageData: Record<string, PageData> = {
       { title: 'Human dispatch, always', text: 'Technology helps us move quickly. Experienced people make the right calls when plans change.', image: IMAGES.dispatchDesk },
       { title: 'A wider network', text: 'When your itinerary takes you beyond the region, our vetted affiliate network extends the same standards to more than 500 cities.', image: IMAGES.cityEvening },
       { title: 'Ready when you are', text: 'Day or night, a real person is available to help with the next move.', image: IMAGES.blackCarDetail },
+    ],
+    related: [
+      { eyebrow: 'Services', label: 'Executive transportation', href: '/services/corporate-transportation' },
+      { eyebrow: 'Fleet', label: 'View our luxury fleet', href: '/fleet' },
+      { eyebrow: 'Coverage', label: 'Service areas & hubs', href: '/locations' },
     ],
   },
   locations: {
@@ -139,6 +149,11 @@ const pageData: Record<string, PageData> = {
       { title: 'Hourly service', text: 'Keep a chauffeur at hand for meetings, shopping, events or a full day of movement.', href: '/services/hourly-charter', image: IMAGES.cityEvening },
       { title: 'Need a proposal?', text: 'Corporate programs, weddings and roadshows are best handled by our reservations team directly.', href: '/events/weddings', image: IMAGES.weddingArrival },
     ],
+    related: [
+      { eyebrow: 'Fleet', label: 'Executive Sedans', href: '/fleet/executive-sedan' },
+      { eyebrow: 'Fleet', label: 'Luxury SUVs', href: '/fleet/luxury-suv' },
+      { eyebrow: 'Corporate', label: 'Corporate Accounts', href: '/corporate/accounts' },
+    ],
   },
   'client-login': {
     eyebrow: 'Client portal',
@@ -150,6 +165,11 @@ const pageData: Record<string, PageData> = {
       { title: 'Upcoming reservations', text: 'Review your confirmed rides and share itinerary details with your team.', image: IMAGES.reservationCabin },
       { title: 'Centralized billing', text: 'For approved corporate accounts, access statements and reservation history.', href: '/corporate/accounts', image: IMAGES.chauffeurOffice },
       { title: 'Need access?', text: 'Call dispatch and we will help connect your account to the client portal.', image: IMAGES.dispatchDesk },
+    ],
+    related: [
+      { eyebrow: 'Booking', label: 'Book a ride online', href: '/book' },
+      { eyebrow: 'Corporate', label: 'Open a corporate account', href: '/corporate/accounts' },
+      { eyebrow: 'Support', label: 'Contact dispatch', href: '/contact' },
     ],
   },
   wedding: {
@@ -257,6 +277,9 @@ export function SkylinePage({ page }: { page: keyof typeof pageData }) {
             <div className="closing-actions">
               <a className="nav-button" href="/book">
                 Request a reservation <ArrowUpRight size={16} />
+              </a>
+              <a className="outline-button" href="tel:+18667873318">
+                Call dispatch (866) 787-3318
               </a>
             </div>
           </Reveal>

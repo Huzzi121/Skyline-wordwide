@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { ArrowUpRight } from 'lucide-react'
 import { SiteFooter, SiteHeader } from '@/components/detail-page'
 import { Reveal, Stagger, StaggerItem, WordReveal } from '@/components/motion'
-import { BUSINESS } from '@/lib/site'
+import { BUSINESS, IMAGES, img } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Skyline Worldwide',
@@ -57,27 +58,42 @@ export default function PrivacyPage() {
     <div className="inner-page">
       <SiteHeader />
       <main>
-        <section className="legal-hero">
-          <nav className="breadcrumbs" aria-label="Breadcrumb">
-            <span className="crumb">
-              <a href="/">Home</a>
-            </span>
-            <span className="crumb">
-              <span aria-current="page">Privacy</span>
-            </span>
-          </nav>
-          <Reveal delay={0.05}><p className="eyebrow light">Legal</p></Reveal>
-          <h1 className="legal-title">
-            <WordReveal text="Privacy" delay={0.12} /> <WordReveal text="policy." italic delay={0.3} />
-          </h1>
-          <Reveal delay={0.4}>
-            <p className="legal-lead">
-              {BUSINESS.name} has served the capital region since {BUSINESS.since}. This summary
-              explains what we collect when you book chauffeured travel, how we use it and the
-              choices you have. Last updated November 2026.
-            </p>
-          </Reveal>
+        {/* TILE 01: LEGAL HERO BANNER (OBSIDIAN BLACK — 100% VIEWPORT AT 90% ZOOM) */}
+        <section className="legal-hero inner-hero">
+          <div
+            className="inner-hero-image"
+            style={{ backgroundImage: `url(${img(IMAGES.blackCarDetail, 2200)})` }}
+            role="img"
+            aria-label="Privacy and client confidentiality"
+          />
+          <div className="inner-hero-scrim" />
+          <div className="inner-hero-content">
+            <nav className="breadcrumbs" aria-label="Breadcrumb">
+              <span className="crumb">
+                <a href="/">Home</a>
+              </span>
+              <span className="crumb">
+                <span aria-current="page">Privacy</span>
+              </span>
+            </nav>
+            <Reveal delay={0.05}>
+              <p className="eyebrow light">Client Trust</p>
+            </Reveal>
+            <h1 className="legal-title">
+              <WordReveal text="Privacy" delay={0.12} />{' '}
+              <WordReveal text="policy." italic delay={0.3} />
+            </h1>
+            <Reveal delay={0.4}>
+              <p className="legal-lead">
+                {BUSINESS.name} has served the capital region since {BUSINESS.since}. This summary
+                explains what we collect when you book chauffeured travel, how we use it, and our
+                strict confidentiality protocols. Last updated November 2026.
+              </p>
+            </Reveal>
+          </div>
         </section>
+
+        {/* TILE 02: LEGAL ARTICLES (WARM LUXURY BEIGE) */}
         <section className="legal-page section-pad">
           <Stagger className="legal-body" gap={0.07}>
             {sections.map((s) => (
@@ -90,17 +106,52 @@ export default function PrivacyPage() {
             ))}
 
             <StaggerItem className="legal-section">
-              <h2>Contact us</h2>
+              <h2>Contact our compliance desk</h2>
               <p>
-                Questions about this policy or your information? Reach our dispatch team at{' '}
-                <a href={BUSINESS.phonePrimaryHref}>{BUSINESS.phonePrimary}</a> or{' '}
+                Questions regarding data handling or confidentiality policies? Reach our dispatch
+                team 24/7 at <a href={BUSINESS.phonePrimaryHref}>{BUSINESS.phonePrimary}</a> or{' '}
                 <a href={BUSINESS.phoneLocalHref}>{BUSINESS.phoneLocal}</a>, by email at{' '}
                 <a href={BUSINESS.emailHref}>{BUSINESS.email}</a>, or by mail at {BUSINESS.address}.
               </p>
             </StaggerItem>
           </Stagger>
         </section>
+
+        {/* TILE 03: CONFIDENTIALITY COMMITMENT (OBSIDIAN BLACK) */}
+        <section className="legal-trust-strip section-pad">
+          <Reveal>
+            <blockquote>
+              “Discretion is not an optional feature of executive transportation. It is the
+              absolute foundation.”
+            </blockquote>
+            <p>Skyline Worldwide Code of Professional Conduct</p>
+          </Reveal>
+        </section>
+
+        {/* TILE 04: DIRECT DISPATCH CTA (WARM LUXURY BEIGE) */}
+        <section className="inner-cta section-pad">
+          <Reveal>
+            <p className="eyebrow">Direct Assistance</p>
+            <h2>
+              Have questions about <em>your itinerary?</em>
+            </h2>
+            <p className="cta-text">
+              Speak directly with a live dispatch manager anytime. We are dedicated to providing
+              complete transparency and peace of mind.
+            </p>
+            <div className="closing-actions">
+              <a className="nav-button" href="/book">
+                Reserve your ride <ArrowUpRight size={16} />
+              </a>
+              <a className="outline-button" href={BUSINESS.phonePrimaryHref}>
+                Call dispatch {BUSINESS.phonePrimary}
+              </a>
+            </div>
+          </Reveal>
+        </section>
       </main>
+
+      {/* TILE 05: FOOTER (OBSIDIAN BLACK) */}
       <SiteFooter />
     </div>
   )

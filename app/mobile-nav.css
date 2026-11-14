@@ -1,8 +1,76 @@
 @media (max-width: 900px) {
   .site-header .desktop-nav,
   .site-header .phone-link,
-  .site-header .nav-button { display: none; }
-  .site-header .menu-button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.32); color: white; font-size: 22px; }
-  .mobile-menu { display: flex; position: fixed; z-index: 20; top: 91px; left: 0; right: 0; padding: 26px 7vw 32px; flex-direction: column; gap: 20px; background: rgba(11,12,14,.97); border-bottom: 1px solid var(--brass); }
-  .mobile-menu a { color: white; text-transform: uppercase; letter-spacing: .18em; font-size: 11px; }
+  .site-header .nav-button {
+    display: none;
+  }
+
+  .site-header .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 9999px;
+    font-size: 20px;
+  }
+
+  .mobile-menu {
+    display: flex;
+    position: fixed;
+    z-index: 99;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 24px 7vw 30px;
+    flex-direction: column;
+    gap: 10px;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.35s ease, border-color 0.35s ease;
+  }
+
+  .mobile-menu.nav-theme-dark {
+    background: rgba(9, 11, 13, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .mobile-menu.nav-theme-dark a {
+    color: #F2F0EB;
+  }
+
+  .mobile-menu.nav-theme-dark a:hover {
+    color: #FFFFFF;
+    background: rgba(153, 125, 90, 0.25);
+    border-color: rgba(153, 125, 90, 0.5);
+  }
+
+  .mobile-menu.nav-theme-light {
+    background: rgba(246, 241, 231, 0.96);
+    border-bottom: 1px solid rgba(153, 125, 90, 0.3);
+  }
+
+  .mobile-menu.nav-theme-light a {
+    color: #12100E;
+  }
+
+  .mobile-menu.nav-theme-light a:hover {
+    color: #12100E;
+    background: rgba(153, 125, 90, 0.2);
+    border-color: rgba(153, 125, 90, 0.45);
+  }
+
+  .mobile-menu a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+  }
 }

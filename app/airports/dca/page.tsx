@@ -3,101 +3,103 @@ import { DetailPage, type DetailPageData } from '@/components/detail-page'
 import { BUSINESS, IMAGES, img } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Reagan National (DCA) Car Service & Chauffeur | Skyline Worldwide',
+  title: 'DCA Airport Black Car Transfer Service — Washington DC, Maryland & Virginia | Skyline Worldwide',
   description:
-    'Private chauffeur service for Ronald Reagan Washington National (DCA). Meet-and-greet in arrivals, 24/7 flight tracking and all-inclusive rates to downtown DC, Arlington and Alexandria.',
+    'Premier DCA Airport Black Car Transfer Service to and from Ronald Reagan Washington National Airport (DCA), serving Washington DC, Maryland, and Virginia with professional chauffeurs and 24/7 flight tracking.',
   alternates: { canonical: '/airports/dca' },
   openGraph: {
-    title: 'Reagan National (DCA) Car Service & Chauffeur | Skyline Worldwide',
+    title: 'DCA Airport Black Car Transfer Service | Skyline Worldwide',
     description:
-      'Meet-and-greet chauffeur service at Reagan National (DCA) with 24/7 flight tracking and all-inclusive rates to downtown DC, Arlington and Alexandria.',
-    images: [{ url: img(IMAGES.airportWindow, 1200) }],
+      'Executive DCA Airport Black Car Transfer Service. Real-time flight tracking, curbside and baggage claim meet, serving Washington DC, Maryland, and Northern Virginia.',
+    images: [{ url: img(IMAGES.washingtonDC, 1200) }],
   },
 }
 
 const data: DetailPageData = {
-  eyebrow: 'Reagan National · DCA',
-  title: 'Minutes from\nthe capital.',
+  eyebrow: 'Airport Transfer Service · DCA (Washington DC · Maryland · Virginia)',
+  title: 'DCA Airport Black Car\nTransfer Service.',
   intro:
-    'Reagan National sits closer to downtown Washington than any other airport in the region, and we treat every transfer accordingly — a chauffeur already waiting the moment you clear the jet bridge.',
-  heroImage: 'airportWindow',
+    'Skyline Worldwide provides top-tier DCA Airport Black Car Transfer Service to and from Ronald Reagan Washington National Airport (DCA), ensuring a seamless and comfortable travel experience across Washington DC, Maryland, and Northern Virginia.',
+  heroImage: IMAGES.washingtonDC,
   breadcrumbs: [
     { label: 'Home', href: '/' },
     { label: 'Airports', href: '/airports' },
     { label: 'Reagan National · DCA' },
   ],
   stats: [
-    { value: '≈ 4.5 mi', label: 'to downtown DC' },
-    { value: '≈ 15 min', label: 'typical drive time' },
-    { value: '24/7', label: 'flight tracking & dispatch' },
-    { value: 'Since 2000', label: 'chauffeuring the capital' },
+    { value: 'DCA', label: 'Reagan National Airport' },
+    { value: 'DC · MD · VA', label: 'Tri-State Capital Coverage' },
+    { value: '24/7', label: 'Flight Tracking & Dispatch' },
+    { value: 'Minutes', label: 'To Capitol Hill & K Street' },
   ],
+  lead:
+    'Located just across the Potomac River from downtown Washington, DCA is the capital’s most immediate runway. We guarantee punctual, discreet black car service for solo executives, diplomatic delegations, and private travelers.',
   sections: [
     {
-      title: 'Where we meet you',
-      text: 'For arriving passengers your chauffeur waits inside baggage claim at your terminal — Terminal 1 or Terminal 2 — holding a name board. You will never hunt the curb or guess which lane; we come to you.',
+      title: 'DCA Airport Black Car Transfer Service',
+      text:
+        'Skyline Worldwide provides top-tier DCA Airport Black Car Transfer Service to and from Ronald Reagan Washington National Airport (DCA), ensuring a seamless and comfortable travel experience for individuals and groups of any size across Washington DC, Maryland, and Virginia. Whether you require executive transportation for government and corporate meetings or a reliable DCA Airport Black Car Transfer Service for personal use, our professional chauffeurs prioritize punctuality, safety, and exceptional service. From the moment you land to your final destination, we guarantee a stress-free journey. Our diverse fleet is equipped to handle all airport transportation needs, featuring late-model luxury sedans, executive SUVs, corporate Sprinter vans, mini buses, shuttle buses, and full-size charter coaches. Whether you\'re traveling solo, with colleagues, or with a large group, we have the perfect vehicle to match your requirements. Every ride is designed for comfort, sophistication, and efficiency, ensuring you arrive at your destination in style.',
     },
     {
-      title: 'Live flight monitoring',
-      text: 'We track your inbound flight by number from the moment it leaves the gate. Early landings, gate changes and delays are all absorbed by dispatch, so the car is in position when you walk out, not when you booked.',
+      title: 'Black Car Transfer Service DCA Airport',
+      text:
+        'Skyline Worldwide offers competitive pricing and great discounts on all DCA airport chauffeured transportation services. We track flights in real time, providing flexibility in case of delays or early arrivals. Our team is committed to delivering a smooth and worry-free experience, so you can relax knowing that your transportation is in expert hands. With customizable scheduling and premium service, we cater to all your DCA Airport Black Car Transfer Service needs across Washington DC, Maryland, and Northern Virginia.',
     },
     {
-      title: 'Meet-and-greet in arrivals',
-      text: 'A suited chauffeur greets you by name inside the terminal, confirms your party and leads the way out. It is the standard that has defined Skyline arrivals since 2000 — no phone tag, no waiting.',
+      title: 'DCA Airport Chauffeured Transportation',
+      text:
+        'With experienced, professional chauffeurs, 24/7 customer support, and real-time dispatch, Skyline Worldwide sets the standard for luxury airport transportation. Whether you need a private DCA Airport Black Car Transfer Service, corporate shuttle, or group transportation, our team is ready to assist. Contact us today for more information, current rates, and exclusive promotions on DCA airport black car services.',
     },
     {
-      title: 'Luggage handled',
-      text: 'Your chauffeur takes the bags from the carousel to the vehicle and loads them while you settle in. Golf clubs, garment bags, oversized cases — tell us at booking and we assign the right vehicle.',
+      title: 'Curbside & Terminal Baggage Claim Greeting',
+      text:
+        'Reagan National’s compact layout allows prompt curbside pickup at Terminals 1 and 2 or traditional inside baggage-claim meet and greet with an executive nameboard. Your chauffeur communicates via text as soon as your aircraft wheels touch down, ensuring zero wait time outside.',
     },
     {
-      title: 'Curbside for quick turns',
-      text: 'Travelling light or short on time? Request a curbside pickup and we will stage the car at the arrivals roadway, coordinating by text so you step straight from door to door.',
+      title: 'Serving the Entire Capital Corridor',
+      text:
+        'Direct, rapid transfers between DCA and Capitol Hill, the White House corridor, downtown DC hotels, Arlington, Alexandria, Tysons, Bethesda, and Chevy Chase. Our chauffeurs possess deep local knowledge of George Washington Parkway and 14th Street Bridge traffic patterns.',
     },
     {
-      title: 'Who it serves',
-      text: 'DCA is the natural choice for travel into Washington proper, Arlington, Alexandria and Capitol Hill. Business or leisure, one passenger or a full party, every rate is quoted all-inclusive.',
+      title: 'All-Inclusive Transparent Pricing',
+      text:
+        'Every DCA reservation includes all tolls, airport access fees, parking, and generous flight delay grace periods. No unexpected surge pricing during rush hour or weather changes — the price confirmed by dispatch is the final price.',
     },
   ],
   gallery: [
-    { src: 'airportWindow', alt: 'Passenger view through a terminal window at Reagan National' },
-    { src: 'blackCarDetail', alt: 'Detail of a black executive vehicle staged for pickup' },
-    { src: 'washingtonDC', alt: 'The Washington skyline minutes from Reagan National' },
+    { src: IMAGES.washingtonDC, alt: 'Aerial view of Washington DC and Reagan National Airport approach' },
+    { src: '/pics/mercedes%20s580.jpeg', alt: 'Mercedes-Benz S-Class S580 Executive Sedan' },
+    { src: '/pics/cadilac%20escalade.jpeg', alt: 'Cadillac Escalade ESV Luxury SUV' },
+    { src: IMAGES.cityStreets, alt: 'Downtown DC street at dusk' },
   ],
   faqs: [
     {
-      q: 'Where exactly will my chauffeur meet me?',
-      a: 'Inside baggage claim at your arrival terminal, holding a name board. If you prefer a curbside pickup at the arrivals roadway instead, just note it at booking and we will coordinate by text.',
+      q: 'Where do I meet my chauffeur at Reagan National (DCA)?',
+      a: 'We offer two convenient options: Inside Baggage Claim (your chauffeur meets you near the baggage carousel holding a personalized sign) or Curbside Outer Lanes (your chauffeur coordinates by SMS and pulls up to the curbside pickup zone the moment you step outside).',
     },
     {
-      q: 'What happens if my flight is delayed or early?',
-      a: 'Nothing changes for you. We track your flight live by number, so dispatch adjusts the pickup to the actual landing time at no extra cost. Your chauffeur will be waiting whenever you arrive.',
+      q: 'Does Skyline Worldwide monitor DCA flight delays?',
+      a: 'Yes. Every reservation is tethered to your flight number and monitored 24/7 in real time. If your DCA flight arrives early or is delayed by air traffic control, your chauffeur’s dispatch time adjusts automatically.',
     },
     {
-      q: 'Which terminals do you cover at DCA?',
-      a: 'All of them — Terminal 1 and the two concourses of Terminal 2. Tell us your airline and flight number and we position the chauffeur at the correct baggage claim.',
+      q: 'How quickly can I reach downtown Washington DC from DCA?',
+      a: 'DCA is uniquely situated just 4 to 5 miles from downtown DC, the National Mall, and Capitol Hill. Typical drive time with a professional chauffeur is approximately 12 to 20 minutes depending on peak traffic.',
     },
     {
-      q: 'How far in advance should I book?',
-      a: 'We ask for at least a few hours’ notice so we can confirm the right vehicle and chauffeur, though our 24/7 dispatch handles last-minute and same-day requests whenever possible.',
-    },
-    {
-      q: 'Do you track flights automatically?',
-      a: 'Yes. Every airport transfer is monitored around the clock by flight number, which is why gate changes and schedule shifts never leave you waiting.',
-    },
-    {
-      q: 'Are parking and tolls included in the price?',
-      a: 'Yes. Reagan National is close in, and our quotes are all-inclusive — airport access fees, tolls, meet-and-greet and wait time are built into the rate with no surprises.',
+      q: 'Can you handle group transportation from DCA for conferences or summits?',
+      a: 'Yes. In addition to luxury sedans and SUVs, our fleet includes 14-passenger Mercedes Sprinter vans, 28-passenger executive shuttles, and 56-passenger motor coaches for delegations and corporate groups.',
     },
   ],
   related: [
-    { label: 'Washington Dulles · IAD', href: '/airports/iad', eyebrow: 'Another airport' },
-    { label: 'Baltimore · BWI', href: '/airports/bwi', eyebrow: 'Another airport' },
-    { label: 'Airport transfer service', href: '/services/airport-transfers', eyebrow: 'Service' },
+    { label: 'Washington Dulles · IAD', href: '/airports/iad', eyebrow: 'International Hub' },
+    { label: 'Baltimore/Washington · BWI', href: '/airports/bwi', eyebrow: 'Regional Hub' },
+    { label: 'Richmond International · RIC', href: '/airports/ric', eyebrow: 'Virginia Gateway' },
+    { label: 'All 6 Airport Hubs', href: '/airports', eyebrow: 'Directory' },
   ],
-  ctaTitle: 'Land, and simply\nstep into the car.',
-  ctaText: `Reserve a Reagan National chauffeur online or call ${BUSINESS.phonePrimary} — our dispatch runs 24/7.`,
+  ctaTitle: 'Your DCA chauffeur is\nstaged on the terminal drive.',
+  ctaText: `Book your DCA airport black car transfer online or contact our 24/7 dispatch desk at ${BUSINESS.phonePrimary} for immediate quotes.`,
 }
 
-export default function Page() {
+export default function DCAPage() {
   return <DetailPage data={data} />
 }

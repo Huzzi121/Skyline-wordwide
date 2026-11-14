@@ -215,3 +215,95 @@ export function useScrolled(threshold = 80) {
   }, [threshold])
   return scrolled
 }
+
+/**
+ * Dynamically detects whether the navbar is currently overlapping a dark or light (beige) section
+ * as the user scrolls through the alternating tile layout of the page.
+ */
+export function useNavbarTheme() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const lightClassNames = [
+      'experience-section',
+      'closing-section',
+      'services-section',
+      'inner-content',
+      'stat-strip',
+      'faq-section',
+      'inner-cta',
+      'reservation-section',
+      'legal-page',
+    ]
+
+    let ticking = false
+
+    const checkOverlap = () => {
+      const scrollY = window.scrollY
+      setScrolled(scrollY > 15)
+
+      // Measure at the vertical center of the navbar (~45px from top)
+      const testY = 45
+
+      const candidates = document.querySelectorAll(
+        'section, footer, .stat-strip, [data-theme]'
+      )
+
+      let detected: 'dark' | 'light' = 'dark'
+
+      for (let i = 0; i < candidates.length; i++) {
+        const el = candidates[i] as HTMLElement
+        const rect = el.getBoundingClientRect()
+
+        if (rect.top <= testY && rect.bottom > testY) {
+          // Check class names
+          const hasLightClass = lightClassNames.some((cls) =>
+            el.classList.contains(cls)
+          )
+
+            if (el.getAttribute('data-theme') === 'dark' || el.classList.contains('dark-faq-section')) {
+              detected = 'dark'
+            } else if (hasLightClass || el.getAttribute('data-theme') === 'light') {
+              detected = 'light'
+            } else {
+              // Perceived luminance fallback from computed background
+              const bg = window.getComputedStyle(el).backgroundColor
+              const rgb = bg.match(/\d+/g)
+              if (rgb && rgb.length >= 3) {
+                const r = parseInt(rgb[0], 10)
+                const g = parseInt(rgb[1], 10)
+                const b = parseInt(rgb[2], 10)
+                const brightness = (r * 299 + g * 587 + b * 114) / 1000
+                if (brightness > 125) {
+                  detected = 'light'
+                }
+              }
+            }
+            break
+          }
+        }
+
+        setTheme(detected)
+        ticking = false
+      }
+
+      const onScroll = () => {
+        if (!ticking) {
+          requestAnimationFrame(checkOverlap)
+          ticking = true
+        }
+      }
+
+      checkOverlap()
+      window.addEventListener('scroll', onScroll, { passive: true })
+      window.addEventListener('resize', onScroll, { passive: true })
+
+      return () => {
+        window.removeEventListener('scroll', onScroll)
+        window.removeEventListener('resize', onScroll)
+      }
+    }, [])
+
+  return { theme, scrolled }
+}
