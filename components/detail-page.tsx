@@ -138,7 +138,7 @@ export function SiteFooter() {
           © {BUSINESS.since}–2026 {BUSINESS.name}
         </span>
         <span>
-          <a href="/privacy">Privacy</a> · Terms · Accessibility
+          <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Accessibility
         </span>
       </div>
     </footer>

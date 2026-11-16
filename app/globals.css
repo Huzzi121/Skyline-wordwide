@@ -2987,6 +2987,14 @@ h1 em {
   border-bottom: 1px solid var(--border-tile-light);
 }
 
+.legal-body {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
 .legal-section h2 {
   color: var(--text-beige-primary);
   border-bottom: 1px solid var(--border-beige);
@@ -2995,12 +3003,110 @@ h1 em {
   font-size: 34px;
   letter-spacing: -.03em;
   margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.legal-section h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  color: var(--text-beige-primary);
+  margin: 26px 0 10px;
+  letter-spacing: -.02em;
 }
 
 .legal-section p {
   color: var(--text-beige-secondary);
   font-size: 15px;
   line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+.legal-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 20px;
+}
+
+.legal-section ul li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--text-beige-secondary);
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+.legal-section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cognac);
+}
+
+.legal-notice-table-wrapper {
+  overflow-x: auto;
+  margin: 22px 0 26px;
+  border-radius: 2px;
+  border: 1px solid var(--border-beige);
+}
+
+.legal-notice-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-beige-surface);
+  min-width: 500px;
+}
+
+.legal-notice-table th,
+.legal-notice-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-beige);
+  font-size: 13.5px;
+}
+
+.legal-notice-table th {
+  background: rgba(153, 125, 90, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--cognac);
+  font-weight: 600;
+}
+
+.legal-notice-table td {
+  color: var(--text-beige-secondary);
+}
+
+.legal-notice-table tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-badge-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(153, 125, 90, 0.1);
+  border: 1px solid rgba(153, 125, 90, 0.25);
+  border-radius: 9999px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  font-weight: 600;
 }
 
 .legal-trust-strip {
