@@ -3245,19 +3245,9 @@ h1 em {
 .fleet-cat-img {
   position: absolute;
   inset: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-origin: content-box;
-  padding: 10px 12px;
-  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
-}
-
-.fleet-cat-card[data-category="sedan"] .fleet-cat-img,
-.fleet-cat-card[data-category="suv"] .fleet-cat-img {
   background-size: cover;
   background-position: center;
-  padding: 0;
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 .fleet-cat-card:hover .fleet-cat-img {

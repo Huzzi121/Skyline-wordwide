@@ -284,7 +284,7 @@ export const FLEET_CATEGORIES = [
     count: 3,
     description:
       'For weddings, celebrations and milestone evenings — elegant presentation with room for the whole party.',
-    image: '/pics/cadilac%20escalade%20limo.jpeg',
+    image: '/pics/stretch-limousine-card.jpg',
   },
   {
     id: 'sprinter' as const,
@@ -293,7 +293,7 @@ export const FLEET_CATEGORIES = [
     count: 5,
     description:
       'A mobile meeting room for teams of up to fourteen. Comfortable seating, generous luggage capacity and professional presence.',
-    image: '/pics/mercedes%20sprinter%20van.jpeg',
+    image: '/pics/executive-sprinter-card.jpg',
   },
 ]
 
