@@ -1099,8 +1099,8 @@ h1 em {
 
 .fleet-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .fleet-card {
@@ -1111,70 +1111,88 @@ h1 em {
   box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.7);
   transition: all .4s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 220px;
+  height: 235px;
 }
 
 .fleet-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--cognac-light);
-  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.85), 0 0 24px rgba(165, 98, 54, 0.22);
+  box-shadow: 0 20px 44px -10px rgba(0, 0, 0, 0.85), 0 0 24px rgba(165, 98, 54, 0.22);
 }
 
 .fleet-image {
-  height: 230px;
-  background-size: cover;
+  flex: 0 0 42%;
+  width: 42%;
+  height: 100%;
+  min-height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-origin: content-box;
+  background-color: #090B0D;
+  padding: 10px 12px;
   position: relative;
   overflow: hidden;
   transition: transform .7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fleet-card:hover .fleet-image {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .fleet-info {
-  padding: 26px 24px 26px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1;
+  min-width: 0;
 }
 
 .fleet-info .eyebrow {
-  font-size: 9px;
-  margin-bottom: 8px;
-  letter-spacing: .2em;
+  font-size: 8.5px;
+  margin-bottom: 4px;
+  letter-spacing: .18em;
   color: var(--cognac-light);
 }
 
 .fleet-info h3 {
-  font-size: 26px;
-  letter-spacing: -.03em;
-  margin-bottom: 8px;
+  font-size: 20px;
+  letter-spacing: -.02em;
+  margin-bottom: 4px;
   color: var(--text-obsidian-primary);
+  line-height: 1.15;
 }
 
 .fleet-detail-text {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-obsidian-muted);
-  margin-bottom: 22px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .fleet-meta {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding-top: 18px;
+  gap: 12px;
+  padding-top: 8px;
   border-top: 1px solid var(--border-obsidian);
   margin-top: auto;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-obsidian-secondary);
 }
 
 .fleet-meta span {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
 }
 
 .fleet-meta svg {
@@ -1185,20 +1203,20 @@ h1 em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px solid var(--border-obsidian);
 }
 
 .fleet-reserve-link {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: .14em;
   font-weight: 600;
   color: var(--cognac-light);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: color .2s ease;
 }
 
@@ -1207,9 +1225,9 @@ h1 em {
 }
 
 .fleet-details-link {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   color: var(--text-obsidian-secondary);
   transition: color .2s ease;
 }
@@ -2001,7 +2019,7 @@ h1 em {
 .inner-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 20px;
 }
 
 .inner-card {
@@ -2010,20 +2028,26 @@ h1 em {
   border-radius: 2px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 195px;
+  height: 205px;
   box-shadow: 0 4px 18px rgba(18, 16, 14, 0.06);
   transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s ease, border-color .45s ease;
 }
 
 .inner-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--cognac);
-  box-shadow: 0 20px 42px -10px rgba(165, 98, 54, 0.2);
+  box-shadow: 0 16px 36px -8px rgba(165, 98, 54, 0.2);
 }
 
 .inner-card-media {
   position: relative;
-  height: 240px;
+  flex: 0 0 38%;
+  width: 38%;
+  height: 100%;
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -2036,41 +2060,53 @@ h1 em {
 }
 
 .inner-card:hover .inner-card-media>div {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .inner-card-num {
   position: absolute;
   z-index: 1;
-  left: 20px;
-  top: 16px;
+  left: 12px;
+  top: 12px;
   color: var(--cognac);
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 16px;
-  letter-spacing: .14em;
+  font-size: 14px;
+  letter-spacing: .12em;
   font-weight: 600;
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 2px 7px;
+  border-radius: 2px;
+  line-height: 1;
 }
 
 .inner-card-body {
-  padding: 30px 28px 34px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1;
+  min-width: 0;
 }
 
 .inner-card-body h3 {
-  font-size: 25px;
-  letter-spacing: -.03em;
-  margin: 0 0 14px;
+  font-size: 21px;
+  letter-spacing: -.02em;
+  margin: 0 0 6px;
   color: var(--text-beige-primary);
+  line-height: 1.15;
 }
 
 .inner-card-body p {
   color: var(--text-beige-secondary);
-  line-height: 1.7;
-  font-size: 14px;
-  margin: 0 0 22px;
+  line-height: 1.5;
+  font-size: 13px;
+  margin: 0 0 12px;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .inner-card-body .text-link {
@@ -2078,7 +2114,7 @@ h1 em {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: .16em;
   text-transform: uppercase;
   font-weight: 600;
@@ -3164,8 +3200,8 @@ h1 em {
 .fleet-category-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 36px;
 }
 
 .fleet-cat-card {
@@ -3174,7 +3210,10 @@ h1 em {
   border-radius: 2px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 195px;
+  height: 205px;
   box-shadow: 0 4px 18px rgba(18, 16, 14, 0.06);
   cursor: pointer;
   outline: none;
@@ -3183,9 +3222,9 @@ h1 em {
 
 .fleet-cat-card:hover,
 .fleet-cat-card:focus-visible {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--cognac);
-  box-shadow: 0 20px 42px -10px rgba(165, 98, 54, 0.22);
+  box-shadow: 0 16px 36px -8px rgba(165, 98, 54, 0.22);
 }
 
 .fleet-cat-card.active-card {
@@ -3195,7 +3234,10 @@ h1 em {
 
 .fleet-cat-media {
   position: relative;
-  height: 250px;
+  flex: 0 0 42%;
+  width: 42%;
+  height: 100%;
+  min-height: 100%;
   overflow: hidden;
   background: #090B0D;
 }
@@ -3203,74 +3245,86 @@ h1 em {
 .fleet-cat-img {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-origin: content-box;
+  padding: 10px 12px;
   transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 .fleet-cat-card:hover .fleet-cat-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .fleet-cat-num {
   position: absolute;
   z-index: 2;
-  left: 20px;
-  top: 18px;
+  left: 12px;
+  top: 12px;
   color: #FAF6EE;
-  background: rgba(9, 11, 13, 0.65);
+  background: rgba(9, 11, 13, 0.7);
   backdrop-filter: blur(8px);
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 14px;
-  letter-spacing: .14em;
+  font-size: 13px;
+  letter-spacing: .12em;
   font-weight: 600;
+  line-height: 1;
 }
 
 .fleet-cat-badge {
   position: absolute;
   z-index: 2;
-  right: 20px;
-  top: 18px;
+  right: 12px;
+  top: 12px;
   background: rgba(153, 125, 90, 0.92);
   color: #FAF6EE;
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: .14em;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 3px 8px;
   border-radius: 9999px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  line-height: 1;
 }
 
 .fleet-cat-body {
-  padding: 30px 28px 32px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1;
+  min-width: 0;
 }
 
 .fleet-cat-body h3 {
-  font-size: 26px;
+  font-size: 22px;
   letter-spacing: -.03em;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   color: var(--text-beige-primary);
   font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.15;
 }
 
 .fleet-cat-body p {
   color: var(--text-beige-secondary);
-  line-height: 1.7;
-  font-size: 14px;
-  margin: 0 0 24px;
+  line-height: 1.5;
+  font-size: 13px;
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   flex: 1;
 }
 
 .fleet-cat-action {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 10px;
   border-top: 1px solid var(--border-beige);
 }
 
@@ -3278,9 +3332,9 @@ h1 em {
   color: var(--cognac);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  letter-spacing: .18em;
+  gap: 6px;
+  font-size: 10.5px;
+  letter-spacing: .16em;
   text-transform: uppercase;
   font-weight: 600;
   transition: all .25s ease;
@@ -3448,8 +3502,8 @@ h1 em {
 .airports-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 36px;
 }
 
 .airport-hub-card {
@@ -3458,20 +3512,26 @@ h1 em {
   border-radius: 2px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 220px;
+  height: 235px;
   box-shadow: 0 4px 18px rgba(18, 16, 14, 0.06);
   transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s ease, border-color .35s ease;
 }
 
 .airport-hub-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--cognac);
-  box-shadow: 0 20px 42px -10px rgba(165, 98, 54, 0.22);
+  box-shadow: 0 16px 36px -8px rgba(165, 98, 54, 0.22);
 }
 
 .airport-hub-media {
   position: relative;
-  height: 250px;
+  flex: 0 0 40%;
+  width: 40%;
+  height: 100%;
+  min-height: 100%;
   overflow: hidden;
   background: #090B0D;
 }
@@ -3485,62 +3545,66 @@ h1 em {
 }
 
 .airport-hub-card:hover .airport-hub-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .airport-hub-code {
   position: absolute;
   z-index: 2;
-  left: 20px;
-  top: 18px;
+  left: 12px;
+  top: 12px;
   color: #FAF6EE;
   background: rgba(9, 11, 13, 0.75);
   backdrop-filter: blur(8px);
-  padding: 5px 12px;
+  padding: 3px 8px;
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 16px;
-  letter-spacing: .15em;
+  font-size: 14px;
+  letter-spacing: .12em;
   font-weight: 700;
+  line-height: 1;
 }
 
 .airport-hub-badge {
   position: absolute;
   z-index: 2;
-  right: 20px;
-  top: 18px;
+  right: 12px;
+  top: 12px;
   background: rgba(153, 125, 90, 0.92);
   color: #FAF6EE;
-  font-size: 10px;
+  font-size: 8.5px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: .14em;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 3px 8px;
   border-radius: 9999px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  line-height: 1;
 }
 
 .airport-hub-body {
-  padding: 30px 28px 32px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1;
+  min-width: 0;
 }
 
 .airport-hub-region {
-  font-size: 10px;
+  font-size: 8.5px;
   text-transform: uppercase;
-  letter-spacing: .18em;
+  letter-spacing: .16em;
   color: var(--cognac);
   font-weight: 600;
-  margin: 0 0 8px;
+  margin: 0 0 3px;
 }
 
 .airport-hub-body h3 {
-  font-size: 26px;
-  letter-spacing: -.03em;
-  margin: 0 0 10px;
+  font-size: 21px;
+  letter-spacing: -.02em;
+  margin: 0 0 4px;
   color: var(--text-beige-primary);
   font-family: 'Cormorant Garamond', Georgia, serif;
   line-height: 1.15;
@@ -3549,11 +3613,11 @@ h1 em {
 .airport-hub-tagline {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 11px;
   color: var(--cognac-dark);
   font-weight: 500;
-  margin: 0 0 16px;
+  margin: 0 0 6px;
 }
 
 .airport-hub-tagline .live-icon {
@@ -3563,30 +3627,34 @@ h1 em {
 
 .airport-hub-desc {
   color: var(--text-beige-secondary);
-  line-height: 1.7;
-  font-size: 14px;
-  margin: 0 0 20px;
+  line-height: 1.45;
+  font-size: 12.5px;
+  margin: 0 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   flex: 1;
 }
 
 .airport-hub-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  padding: 14px 0;
+  gap: 12px;
+  padding: 8px 0;
   border-top: 1px solid var(--border-beige);
   border-bottom: 1px solid var(--border-beige);
-  margin-bottom: 20px;
-  font-size: 11px;
+  margin-bottom: 8px;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   color: var(--text-beige-secondary);
 }
 
 .hub-meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hub-meta-item svg {
@@ -3601,9 +3669,9 @@ h1 em {
   color: var(--cognac);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  letter-spacing: .18em;
+  gap: 6px;
+  font-size: 10.5px;
+  letter-spacing: .16em;
   text-transform: uppercase;
   font-weight: 600;
   transition: all .25s ease;
@@ -3835,10 +3903,30 @@ h1 em {
   .fleet-category-cards-grid,
   .airports-cards-grid,
   .airport-standards-grid,
+  .inner-grid,
   .how-grid,
   .gallery-grid,
   .related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .fleet-cat-card,
+  .fleet-card,
+  .airport-hub-card,
+  .inner-card {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  .fleet-cat-media,
+  .fleet-image,
+  .airport-hub-media,
+  .inner-card-media {
+    flex: none;
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
   }
 
   .experience-pillars {
