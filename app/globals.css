@@ -3253,6 +3253,12 @@ h1 em {
   transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
+.fleet-cat-card[data-category="sedan"] .fleet-cat-img {
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+}
+
 .fleet-cat-card:hover .fleet-cat-img {
   transform: scale(1.05);
 }

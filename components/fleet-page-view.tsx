@@ -266,7 +266,7 @@ export const FLEET_CATEGORIES = [
     count: 3,
     description:
       'A refined, discreet cabin for up to three passengers. Ideal for airport transfers, executive travel and point-to-point service.',
-    image: '/pics/mercedes%20s580.jpeg',
+    image: '/pics/executive-sedan-card.jpg',
   },
   {
     id: 'suv' as const,
@@ -439,6 +439,7 @@ export function FleetPageView() {
                 <StaggerItem key={cat.id}>
                   <div
                     className={`fleet-cat-card ${isSelected ? 'active-card' : ''}`}
+                    data-category={cat.id}
                     onClick={() => handleSelectCategory(cat.id)}
                     role="button"
                     tabIndex={0}
