@@ -3250,6 +3250,22 @@ h1 em {
   transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
+.fleet-cat-card[data-category="sedan"] .fleet-cat-img {
+  background-position: 42% center;
+}
+
+.fleet-cat-card[data-category="suv"] .fleet-cat-img {
+  background-position: 15% center;
+}
+
+.fleet-cat-card[data-category="limo"] .fleet-cat-img {
+  background-position: 3% center;
+}
+
+.fleet-cat-card[data-category="sprinter"] .fleet-cat-img {
+  background-position: 32% center;
+}
+
 .fleet-cat-card:hover .fleet-cat-img {
   transform: scale(1.05);
 }
