@@ -275,7 +275,7 @@ export const FLEET_CATEGORIES = [
     count: 3,
     description:
       'Additional space for passengers and luggage, without giving up the calm, composed experience Skyline is known for.',
-    image: '/pics/cadilac%20escalade.jpeg',
+    image: '/pics/luxury-suv-card.jpg',
   },
   {
     id: 'limo' as const,
