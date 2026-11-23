@@ -2262,52 +2262,6 @@ h1 em {
   border-bottom: 1px solid var(--border-tile-light);
 }
 
-.reservation-tabs {
-  border-bottom: 1px solid var(--border-beige);
-}
-
-.reservation-tabs button {
-  color: var(--text-beige-secondary);
-}
-
-.reservation-tabs button.active {
-  color: var(--cognac);
-  border-bottom-color: var(--cognac);
-}
-
-.reservation-aside {
-  background: var(--bg-beige-surface);
-  border: 1px solid var(--border-beige);
-  color: var(--text-beige-primary);
-  box-shadow: 0 10px 28px -6px rgba(18, 16, 14, 0.08);
-}
-
-.reservation-aside .eyebrow {
-  color: var(--cognac);
-}
-
-.reservation-aside li {
-  color: var(--text-beige-secondary);
-}
-
-.reservation-aside li svg {
-  color: var(--cognac);
-}
-
-.reservation-assure {
-  border-top: 1px solid var(--border-beige);
-  border-bottom: 1px solid var(--border-beige);
-  color: var(--text-beige-secondary);
-}
-
-.reservation-call {
-  color: var(--text-beige-primary);
-}
-
-.reservation-call.subtle {
-  color: var(--text-beige-secondary);
-}
-
 .reservation-layout {
   display: grid;
   grid-template-columns: 1.55fr .85fr;
@@ -2319,7 +2273,7 @@ h1 em {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 32px;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-beige);
 }
 
 .reservation-tabs button {
@@ -2327,17 +2281,23 @@ h1 em {
   border: 0;
   padding: 0 2px 14px;
   margin-right: 26px;
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
+  font-weight: 500;
   border-bottom: 2px solid transparent;
   transition: color .2s ease, border-color .2s ease;
 }
 
+.reservation-tabs button:hover {
+  color: var(--text-beige-primary);
+}
+
 .reservation-tabs button.active {
-  color: var(--champagne);
-  border-bottom-color: var(--champagne);
+  color: var(--cognac);
+  border-bottom-color: var(--cognac);
+  font-weight: 600;
 }
 
 .reservation-grid {
@@ -2360,27 +2320,42 @@ h1 em {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .14em;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--text-beige-secondary);
 }
 
 .field input,
 .field select,
 .field textarea {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  padding: 14px 15px;
+  background: #FFFFFF;
+  border: 1px solid rgba(153, 125, 90, 0.32);
+  padding: 14px 16px;
   font-size: 14px;
-  color: var(--text-primary);
+  color: var(--text-beige-primary);
   outline: none;
   border-radius: 2px;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  color-scheme: light;
+  box-shadow: 0 1px 3px rgba(18, 16, 14, 0.04);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-beige-muted);
+  opacity: 0.8;
+}
+
+.field select option {
+  background: #FAF6EE;
+  color: #12100E;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: var(--champagne);
-  box-shadow: 0 0 0 3px var(--champagne-dim);
+  border-color: var(--cognac);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(153, 125, 90, 0.18);
 }
 
 .field textarea {
@@ -2390,8 +2365,9 @@ h1 em {
 
 .reservation-error {
   margin-top: 20px;
-  color: #ef4444;
+  color: #dc2626;
   font-size: 13px;
+  font-weight: 500;
 }
 
 .reservation-actions {
@@ -2403,8 +2379,8 @@ h1 em {
 }
 
 .reservation-submit {
-  background: var(--champagne);
-  color: var(--bg-primary);
+  background: var(--cognac);
+  color: #FAF6EE;
   border: 0;
   padding: 16px 32px;
   font-size: 11px;
@@ -2413,13 +2389,14 @@ h1 em {
   letter-spacing: .18em;
   border-radius: 2px;
   cursor: pointer;
+  box-shadow: 0 4px 16px var(--cognac-glow);
   transition: all .25s ease;
 }
 
 .reservation-submit:hover {
-  background: var(--champagne-light);
+  background: var(--cognac-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(214, 197, 164, 0.3);
+  box-shadow: 0 10px 24px rgba(153, 125, 90, 0.38);
 }
 
 .reservation-submit[disabled] {
@@ -2429,26 +2406,32 @@ h1 em {
 
 .reservation-fallback {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
 }
 
 .reservation-fallback a {
-  border-bottom: 1px solid var(--champagne);
-  color: var(--champagne);
+  border-bottom: 1px solid var(--cognac);
+  color: var(--cognac);
+  transition: color .2s ease;
+}
+
+.reservation-fallback a:hover {
+  color: var(--text-beige-primary);
 }
 
 .reservation-aside {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
+  background: var(--bg-beige-surface);
+  border: 1px solid var(--border-beige);
+  color: var(--text-beige-primary);
   padding: 40px 34px;
   position: sticky;
   top: 100px;
   border-radius: 2px;
+  box-shadow: 0 10px 28px -6px rgba(18, 16, 14, 0.08);
 }
 
 .reservation-aside .eyebrow {
-  color: var(--champagne);
+  color: var(--cognac);
 }
 
 .reservation-aside ul {
@@ -2465,11 +2448,11 @@ h1 em {
   gap: 12px;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
 }
 
 .reservation-aside li svg {
-  color: var(--champagne);
+  color: var(--cognac);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -2481,10 +2464,10 @@ h1 em {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .12em;
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
   padding: 18px 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-beige);
+  border-bottom: 1px solid var(--border-beige);
 }
 
 .reservation-call {
@@ -2494,13 +2477,18 @@ h1 em {
   margin-top: 22px;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 24px;
-  color: var(--text-primary);
+  color: var(--text-beige-primary);
+  transition: color .2s ease;
+}
+
+.reservation-call:hover {
+  color: var(--cognac);
 }
 
 .reservation-call.subtle {
   margin-top: 6px;
   font-size: 14px;
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
 }
 
 .confirmation {
@@ -2513,9 +2501,9 @@ h1 em {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-champagne);
-  color: var(--champagne);
+  background: var(--bg-beige-surface);
+  border: 1px solid var(--border-beige);
+  color: var(--cognac);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2526,10 +2514,11 @@ h1 em {
   font-size: clamp(40px, 5vw, 64px);
   letter-spacing: -.04em;
   margin: 6px 0 20px;
+  color: var(--text-beige-primary);
 }
 
 .confirmation-copy {
-  color: var(--text-secondary);
+  color: var(--text-beige-secondary);
   line-height: 1.75;
   max-width: 500px;
   margin: 0 auto 30px;
@@ -2541,8 +2530,8 @@ h1 em {
   flex-direction: column;
   gap: 6px;
   padding: 18px 44px;
-  border: 1px solid var(--border-champagne);
-  background: var(--bg-elevated);
+  border: 1px solid var(--border-beige);
+  background: var(--bg-beige-surface);
   margin-bottom: 34px;
   border-radius: 2px;
 }
@@ -2551,15 +2540,15 @@ h1 em {
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: .18em;
-  color: var(--champagne);
+  color: var(--cognac);
 }
 
 .confirmation-ref strong {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 26px;
   letter-spacing: .08em;
-  color: var(--text-primary);
-  font-weight: 400;
+  color: var(--text-beige-primary);
+  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -3795,9 +3784,14 @@ h1 em {
 
   .experience-layout,
   .coverage-section,
+  .reservation-layout,
   .how-grid {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .reservation-aside {
+    position: static;
   }
 
   .experience-visual {
@@ -3917,6 +3911,7 @@ h1 em {
   .airports-cards-grid,
   .airport-standards-grid,
   .inner-grid,
+  .reservation-grid,
   .how-grid,
   .gallery-grid,
   .related-grid {
